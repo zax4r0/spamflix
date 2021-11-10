@@ -1,0 +1,92 @@
+{
+  "name": "prisma-next-auth-graphql-starter",
+  "version": "3.1.0",
+  "description": "",
+  "scripts": {
+    "start": "next start",
+    "dev": "next",
+    "build": "next build",
+    "studio": "npx prisma studio",
+    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "generate:prisma": "prisma generate",
+    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
+    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json src/graphql/schema",
+    "typecheck": "tsc",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx --ignore-path .gitignore . && prettier --write ./**/*.{ts,tsx}",
+    "prettier": "prettier --write ./**/*.{ts,tsx}",
+    "postinstall": "npm run generate"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "keywords": [
+    "prisma",
+    "starter",
+    "fullstack",
+    "auth"
+  ],
+  "author": "Taras Protchenko",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/client": "3.4.16",
+    "@prisma/client": "^3.4.1",
+    "apollo-server-micro": "3.4.0",
+    "autoprefixer": "^10.0.2",
+    "dotenv": "^10.0.0",
+    "formik": "^2.2.9",
+    "graphql": "15.6.1",
+    "graphql-middleware": "6.0.9",
+    "graphql-scalars": "^1.13.1",
+    "graphql-shield": "7.5.0",
+    "micro": "9.3.4",
+    "micro-cors": "0.1.1",
+    "next": "12.0.0",
+    "next-auth": "3.29.0",
+    "next-pagination": "^3.1.0",
+    "next-pwa": "^5.4.0",
+    "nexus": "1.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-flip-move": "^3.0.4",
+    "react-player": "^2.9.0",
+    "sharp": "^0.29.2"
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^2.0.2",
+    "@graphql-codegen/cli": "^2.2.2",
+    "@graphql-codegen/typescript": "^2.3.1",
+    "@graphql-codegen/typescript-operations": "^2.2.0",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.4",
+    "@headlessui/react": "^1.4.1",
+    "@heroicons/react": "^1.0.4",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "0.4.1",
+    "@types/next-auth": "3.15.0",
+    "@types/node": "16.9.1",
+    "@types/react": "17.0.33",
+    "@types/react-dom": "17.0.10",
+    "autoprefixer": "10.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "husky": "5.2.0",
+    "lint-staged": "11.1.2",
+    "postcss": "8.3.6",
+    "prettier": "2.4.0",
+    "prisma": "^3.4.1",
+    "tailwind-scrollbar-hide": "^1.0.3",
+    "tailwindcss": "2.2.17",
+    "ts-node": "10.2.1",
+    "typescript": "4.4.3"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}

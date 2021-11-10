@@ -1,0 +1,7 @@
+node_modules
+.next
+generated/nexus-typegen.ts
+generated/schema.graphql
+pages/home.tsx
+components/Thumbnails.tsx
+lib/requests.ts
