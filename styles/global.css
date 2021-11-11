@@ -7,9 +7,6 @@
     @apply bg-black text-gray-300;
   }
 }
-
-/* well sometimes adding any one not worked on my machine so added all lol  */
-
 overflow: scroll;
 overflow-x: hidden;
 html {

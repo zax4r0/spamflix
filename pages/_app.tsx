@@ -3,6 +3,8 @@ import { AppProps } from 'next/app'
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
 // import 'styles/global.css'
 import 'styles/tailwind.css'
+import 'styles/xd.css'
+
 import 'next-pagination/dist/index.css'
 import Head from 'next/head'
 import '@fortawesome/fontawesome-free/css/all.min.css'

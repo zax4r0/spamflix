@@ -17,7 +17,7 @@ module.exports = {
         'livesport-small': "url('/static/images/logo/live-sports-small.jpg')",
         'network-logo': "url('/static/images/logo/network-logo-bg.jpg')",
       }),
-      padding: { 'fluid-video': '56.25%' },
+
       colors: {
         'hulu-green': '#00ed82',
         'live-section': '#151516',
@@ -126,7 +126,7 @@ module.exports = {
     'disabled',
   ],
   plugins: [
-    require('tailwind-scrollbar-hide', '@tailwindcss/forms'),
+    require('tailwind-scrollbar-hide', '@tailwindcss/forms', '@tailwindcss/aspect-ratio'),
     plugin(function ({ addComponents, theme }) {
       const screens = theme('screens', {})
       addComponents([

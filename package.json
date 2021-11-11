@@ -54,6 +54,7 @@
     "@fortawesome/fontawesome-free": "5.15.3",
     "@popperjs/core": "^2.10.2",
     "@prisma/client": "^3.4.1",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
     "apollo-server-micro": "3.4.0",
     "autoprefixer": "^10.0.2",
     "chart.js": "2.9.4",

@@ -17,7 +17,10 @@ function home({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) 
 
   if (!session) {
     return (
-      <button className="btn-green" onClick={() => signIn()}>
+      <button
+        className=" container justify-center bg-white  hover:bg-hulu-green text-gray-800 px-8 py-5 text-md font-semibold border-0 rounded-md cursor-pointer uppercase tracking-wide leading-3 hover:opacity-80"
+        onClick={() => signIn()}
+      >
         Sign in
       </button>
     )

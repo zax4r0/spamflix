@@ -15,6 +15,14 @@ module.exports = withPWA({
   reactStrictMode: true,
   images: {
     minimumCacheTTL: 60,
-    domains: ['*', 'avatars.githubusercontent.com', 'localhost', '127.0.0.1', 'image.tmdb.org'],
+    domains: [
+      '*',
+      'avatars.githubusercontent.com',
+      'localhost',
+      '127.0.0.1',
+      'image.tmdb.org',
+      'api.themoviedb.org',
+      'www.2embed.ru',
+    ],
   },
 })
