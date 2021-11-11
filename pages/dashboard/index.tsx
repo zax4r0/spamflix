@@ -1,7 +1,7 @@
 // import { useRouter } from 'next/router'
 import { HomeIcon } from '@heroicons/react/outline'
 import React from 'react'
-import BaseLayout from '@/components/Layout/BaseLayout'
+import BaseLayout from '@/Layout/BaseLayout'
 
 function Notfound() {
   // const router = useRouter()

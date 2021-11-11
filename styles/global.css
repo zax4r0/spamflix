@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#0B1E2A] text-gray-300;
+    @apply bg-black text-gray-300;
   }
 }
 
@@ -21,7 +21,7 @@ html {
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 .header::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -37,10 +37,6 @@ html {
 }
 
 .cover-grad {
-  background: linear-gradient(
-      156.82deg,
-      rgba(0, 0, 0, 0.6) 4.58%,
-      rgba(0, 0, 0, 0) 69.61%
-    ),
+  background: linear-gradient(156.82deg, rgba(0, 0, 0, 0.6) 4.58%, rgba(0, 0, 0, 0) 69.61%),
     linear-gradient(24.5deg, rgba(0, 0, 0, 0.2) 4.71%, rgba(0, 0, 0, 0) 71.49%);
 }

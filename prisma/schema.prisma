@@ -24,13 +24,13 @@ model Account {
   createdAt          DateTime  @default(now()) @map(name: "created_at")
   updatedAt          DateTime  @default(now()) @map(name: "updated_at")
 
+
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String? @db.ObjectId
   @@index([providerAccountId], name: "providerAccountId")
   @@index([providerId], name: "providerId")
   @@index([userId], name: "userId")
-
   @@map(name: "accounts")
-  user   User?   @relation(fields: [userId], references: [id])
-  userId String? @db.ObjectId
 }
 
 model Session {
@@ -42,9 +42,9 @@ model Session {
   createdAt    DateTime @default(now()) @map(name: "created_at")
   updatedAt    DateTime @default(now()) @map(name: "updated_at")
 
-  @@map(name: "sessions")
   user   User?   @relation(fields: [userId], references: [id])
   userId String? @db.ObjectId
+  @@map(name: "sessions")
 }
 
 model User {
@@ -59,7 +59,7 @@ model User {
   account             Account[]
   session             Session[]
   verificationRequest VerificationRequest[]
-  role              Role @default(USER)
+  role                Role                  @default(USER)
   @@map(name: "users")
 }
 
@@ -71,15 +71,15 @@ model VerificationRequest {
   createdAt  DateTime @default(now()) @map(name: "created_at")
   updatedAt  DateTime @default(now()) @map(name: "updated_at")
 
-  @@map(name: "verification_requests")
   user   User?   @relation(fields: [userId], references: [id])
   userId String? @db.ObjectId
+  @@map(name: "verification_requests")
 }
 
-model Profile{
-  id         String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  fist_name  String?
-  last_name  String?
+model Profile {
+  id        String  @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  fist_name String?
+  last_name String?
 
 }
 

@@ -6,21 +6,35 @@
     "start": "next start",
     "dev": "next",
     "build": "next build",
+    "build:tailwind": "tailwind build styles/global.css -o styles/tailwind.css",
     "studio": "npx prisma studio",
     "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
     "generate:prisma": "prisma generate",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
-    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json src/graphql/schema",
+    "generate:nexus": "ts-node --transpile-only -P nexus.tsconfig.json graphql/schema",
     "typecheck": "tsc",
     "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .ts,.tsx --ignore-path .gitignore . && prettier --write ./**/*.{ts,tsx}",
     "prettier": "prettier --write ./**/*.{ts,tsx}",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "postinstall": "npm run generate"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -37,15 +51,20 @@
   "license": "ISC",
   "dependencies": {
     "@apollo/client": "3.4.16",
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "^2.10.2",
     "@prisma/client": "^3.4.1",
     "apollo-server-micro": "3.4.0",
     "autoprefixer": "^10.0.2",
+    "chart.js": "2.9.4",
     "dotenv": "^10.0.0",
     "formik": "^2.2.9",
     "graphql": "15.6.1",
     "graphql-middleware": "6.0.9",
     "graphql-scalars": "^1.13.1",
     "graphql-shield": "7.5.0",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
     "micro": "9.3.4",
     "micro-cors": "0.1.1",
     "next": "12.0.0",

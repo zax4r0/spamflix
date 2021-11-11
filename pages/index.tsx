@@ -9,7 +9,8 @@ import live3 from '/public/static/images/logo/live-sports-logo-3.svg'
 import live4 from '/public/static/images/logo/live-sports-logo-4.png'
 import React from 'react'
 import Modal from 'components/Modal'
-import BaseLayout from 'components/Layout/BaseLayout'
+import BaseLayout from '@/Layout/BaseLayout'
+
 import hulusmall from '/public/static/images/logo/hulusmall.png'
 import Footer from '@/components/Footer'
 const Landing = () => {
